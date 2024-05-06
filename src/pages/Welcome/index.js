@@ -12,7 +12,7 @@ export default function Welcome({ navigation }) {
         <Text style={styles.welcome}>Bem vindo(a)</Text>
 
         <View style={styles.formData}>
-          <Image source={require("../../assets/User.png")} />
+          <Image source={require("../../assets/User.png")} style={styles.icon}/>
           <TextInput
             style={styles.titleText}
             placeholder={"Nome de usuário"}
@@ -20,7 +20,7 @@ export default function Welcome({ navigation }) {
         </View>
 
         <View style={styles.formData}>
-          <Image source={require("../../assets/PassW.png")} />
+          <Image source={require("../../assets/PassW.png")} style={styles.icon}/>
           <TextInput
             style={styles.titleText}
             placeholder={"Digite sua senha"}
@@ -87,6 +87,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     // marginBottom: "5%"
+  },
+  icon: {
+    width: 35,
+    height: 35,
   },
   titleText: {
     fontSize: 20,
