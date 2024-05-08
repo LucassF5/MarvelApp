@@ -8,7 +8,7 @@ import { NavigationContainer } from "@react-navigation/native"
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor="#000" barStyle={'default'} />
+      <StatusBar hidden />
       <Routes />
     </NavigationContainer>
   );

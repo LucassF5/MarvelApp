@@ -6,9 +6,9 @@ export default function Welcome({ navigation }) {
   return (
     <View style={styles.container}>
 
-      <Image source={require("../../assets/BM.jpg")} style={styles.image} />
+      <Animatable.Image animation="fadeInUp" delay={200} source={require("../../assets/BM.jpg")} style={styles.image} />
 
-      <Animatable.View animation="fadeInUp" delay={500} style={styles.form}>
+      <Animatable.View animation="fadeInUp" delay={200} style={styles.form}>
         <Text style={styles.welcome}>Bem vindo(a)</Text>
 
         <View style={styles.formData}>
@@ -62,17 +62,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000"
   },
   image: {
-    flex: 3
+    flex: 1
   },
   form: {
-    flex: 5,
-    marginBottom: "10%",
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    borderBottomLeftRadius: 25,
-    borderBottomRightRadius: 25,
-    backgroundColor: "#FFF",
-    width: "80%",
+    flex: 3,
+    // marginBottom: "10%",
+    borderTopStartRadius: 25,
+    borderTopEndRadius: 25,
+    backgroundColor: "lightgray",
+    width: "100%",
     alignItems: "center"
   },
   welcome: {
@@ -85,8 +83,8 @@ const styles = StyleSheet.create({
   formData: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    // marginBottom: "5%"
+    // justifyContent: "center",
+    // marginLeft: "5%"
   },
   icon: {
     width: 35,
@@ -100,10 +98,13 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 10,
     marginRight: 40,
-    paddingHorizontal: 20,
+    // paddingHorizontal: 2,
     paddingVertical: "2%",
-    borderWidth: 1,
-    borderRadius: 10,
+    borderBottomWidth: 1,
+    // borderRadius: 10,
+    height: 50,
+    width: "65%",
+    // textAlign: "center"
   },
   button: {
     backgroundColor: "rgb(236,19,51)",

@@ -12,14 +12,14 @@ export default function Routes() {
             headerTitle: "", //Titulo do cabeçalho das Stacks
             headerShown: false // Mostrar cabeçalho
         }}>
-            <Stack.Screen
-                name="Welcome"
-                component={Welcome}
-            />
 
             <Stack.Screen
                 name="Login"
                 component={Login}
+            />
+            <Stack.Screen
+                name="Welcome"
+                component={Welcome}
             />
         </Stack.Navigator>
     )
