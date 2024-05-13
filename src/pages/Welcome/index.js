@@ -29,14 +29,16 @@ export default function Welcome({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("Initial")}
           >
           <Text style={styles.buttonText}>
             ENTRAR
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={() => navigation.navigate("Login")}
+        >
           <Text style={styles.registerText}>
             Não possui uma conta? Cadastre-se
           </Text>

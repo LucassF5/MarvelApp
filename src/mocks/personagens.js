@@ -2,6 +2,7 @@
 const characters = [
     {
       "id": 1,
+      "image": require("../assets/Marvel.jpg"),
       "nome": "Homem de Ferro",
       "identidade": "Tony Stark",
       "poderes": ["Engenharia Genial", "Armadura Tecnológica", "Inteligência", "Riqueza"],
@@ -11,6 +12,7 @@ const characters = [
     },
     {
       "id": 2,
+      "image": require("../assets/Marvel.jpeg"),
       "nome": "Homem-Aranha",
       "identidade": "Peter Parker",
       "poderes": ["Força Aumentada", "Agilidade", "Sentido Aranha", "Habilidade em Luta"],
@@ -20,6 +22,7 @@ const characters = [
     },
     {
       "id": 3,
+      "image": require("../assets/Marvel_logo.png"),
       "nome": "Capitão América",
       "identidade": "Steve Rogers",
       "poderes": ["Força Aumentada", "Agilidade", "Resistência", "Liderança"],
@@ -29,6 +32,7 @@ const characters = [
     },
     {
       "id": 4,
+      "image": require("../assets/Marvel_red.jpg"),
       "nome": "Thor",
       "identidade": "Thor Odinson",
       "poderes": ["Força Sobre-humana", "Durabilidade", "Manipulação do Trovão", "Voo"],
@@ -38,6 +42,7 @@ const characters = [
     },
     {
       "id": 5,
+      "image": require("../assets/Marvel_red.jpg"),
       "nome": "Hulk",
       "identidade": "Bruce Banner",
       "poderes": ["Força Super-humana", "Regeneração", "Resistência", "Ira"],
