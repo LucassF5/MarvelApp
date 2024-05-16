@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import Login from "../pages/SignIn"
 import Welcome from "../pages/Welcome"
 import InitialRoute from "../pages/InitialRoute"
+import Card from "../pages/Card/Card"
 
 const Stack = createNativeStackNavigator()
 // const Tab = createBottomTabNavigator()
@@ -28,6 +29,11 @@ export default function Routes() {
             <Stack.Screen
                 name="Initial"
                 component={InitialRoute}
+            />
+
+            <Stack.Screen
+                name="Card"
+                component={Card}
             />
         </Stack.Navigator>
     )

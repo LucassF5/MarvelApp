@@ -44,11 +44,12 @@ export default function InitialRoute({ navigation }) {
                         numColumns={2}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => (
-                            <View style={styles.characterContainer}>
+                            <TouchableOpacity style={styles.characterContainer}
+                                onPress={() => navigation.navigate('Card', { ...item })}
+                            >
                                 <Text style={styles.name}>{item.name}</Text>
-                                {/* <Text style={styles.description}>{item.description || 'Sem descrição disponível'}</Text> */}
                                 <Image source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} style={{ width: "70%", aspectRatio: 1 }} />
-                            </View>
+                            </TouchableOpacity>
                         )}
                     />
                 </ScrollView>

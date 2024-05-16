@@ -8,7 +8,7 @@ import { NavigationContainer } from "@react-navigation/native"
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar />
+      <StatusBar hidden />
       <Routes />
     </NavigationContainer>
   );
