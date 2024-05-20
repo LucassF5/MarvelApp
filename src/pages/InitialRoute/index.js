@@ -32,7 +32,7 @@ export default function InitialRoute({ navigation }) {
             {isLoading ? (
                 <ActivityIndicator size="large" color="#0000ff" /> // animação de carregamento
             ) : (
-                <ScrollView style={{flex:1}}>
+                <View style={{flex:1}}>
                     <TouchableOpacity style={{ marginVertical: 30 }} onPress={() => navigation.goBack()}>
                         <Text
                             style={{ backgroundColor: "red", textAlign: "center", padding: 10, fontSize: 16 }}
@@ -52,7 +52,7 @@ export default function InitialRoute({ navigation }) {
                             </TouchableOpacity>
                         )}
                     />
-                </ScrollView>
+                </View>
             )}
         </View>
     );
