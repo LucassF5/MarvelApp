@@ -21,7 +21,7 @@ const Card = ({ route, navigation }) => {
   return (
     <ImageBackground source={require("../../assets/Marvel.jpg")} resizeMode='cover' style={styles.container}>
       <View >
-        <LinearGradient style={{ padding: 20, marginVertical: 0, borderRadius: 10, width: '90%', flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 20 }}
+        <LinearGradient style={{ padding: 20, borderRadius: 10, width: '90%', flex: 1, justifyContent: 'center', alignItems: 'center'}}
           colors={['rgba(255,255,255,0.9)', 'rgba(255,255,255,0.9)', 'rgba(255,255,255,0.9)']}>
           <Text style={styles.name}>{character}</Text>
           <Image source={{ uri: image }} style={{ width: "100%", aspectRatio: 1 }} />
@@ -46,14 +46,14 @@ const styles = StyleSheet.create({
   },
   name: {
     fontWeight: 'bold',
-    fontSize: 26,
+    fontSize: 23,
     color: 'red',
     textAlign: 'center',
-    marginBottom: 15,
+    // marginBottom: 15,
   },
   description: {
-    fontSize: 16,
-    marginTop: 15,
+    fontSize: 12,
+    marginTop: 10,
     fontWeight: '500',
   },
 })
