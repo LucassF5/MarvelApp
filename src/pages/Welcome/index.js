@@ -29,7 +29,7 @@ export default function Welcome({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Initial")}
+          onPress={() => navigation.navigate("TabRoutes")}
           >
           <Text style={styles.buttonText}>
             ENTRAR
