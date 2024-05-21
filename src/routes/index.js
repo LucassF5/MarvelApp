@@ -38,7 +38,7 @@ function TabRoutes() {
                 component={InitialRoute}
                 options={{
                     tabBarIcon: () => (
-                        <Image source={require('../assets/B-panther.png')}
+                        <Image source={require('../assets/HMR.png')}
                             style={{ width: 35, height: 35 }} />
                     )
                 }}
@@ -47,6 +47,12 @@ function TabRoutes() {
             <Tab.Screen
                 name="Search"
                 component={Search}
+                options={{
+                    tabBarIcon: () => (
+                        <Image source={require('../assets/SRC.png')}
+                            style={{ width: 35, height: 35 }} />
+                    )
+                }}
             />
         </Tab.Navigator>
     )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet, Image, Alert, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet, Image, Alert, ScrollView, ImageBackground } from 'react-native';
 
 import { getCharacters } from '../../services/requisicoes/characters';
 
@@ -7,14 +7,16 @@ import { getCharacters } from '../../services/requisicoes/characters';
 export default function InitialRoute({ navigation }) {
     const [isLoading, setIsLoading] = useState(true);
     const [characters, setCharacters] = useState([]);
+    const [limit, setLimit] = useState(10);
+    // console.log(limit)
 
     async function characteres() {
-        const resultado = await getCharacters()
-        console.log(resultado)
+        const resultado = await getCharacters(limit)
 
         if (resultado) {
             setCharacters(resultado);
             setIsLoading(false);
+            // console.log(resultado)
         } else {
             Alert.alert("Não foi possível carregar os personagens.")
         }
@@ -24,7 +26,7 @@ export default function InitialRoute({ navigation }) {
 
         characteres()
 
-    }, []);
+    }, [limit]);
 
     return (
         <View style={styles.container}>
@@ -32,17 +34,40 @@ export default function InitialRoute({ navigation }) {
             {isLoading ? (
                 <ActivityIndicator size="large" color="#0000ff" /> // animação de carregamento
             ) : (
-                <View style={{flex:1}}>
-                    <TouchableOpacity style={{ marginVertical: 30 }} onPress={() => navigation.goBack()}>
+                <View style={{ flex: 1 }}>
+                    {/* <TouchableOpacity style={{ marginVertical: 30 }} onPress={() => navigation.goBack()}>
                         <Text
                             style={{ backgroundColor: "red", textAlign: "center", padding: 10, fontSize: 16 }}
                         >Voltar</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
+
+                    <Text style={styles.choiceText}>Quantos personagens deseja visualizar?</Text>
+                    <Text style={{ fontSize: 14, color: "#faa", textAlign: "center"}}>Limite de 100 nesse modo</Text>
+                    <View style={styles.choiceButton}>
+                        <TouchableOpacity
+                            style={styles.choiceBox}
+                            onPress={() => setLimit(10) && characteres() && console.log(limit)}
+                        >
+                            <Text style={{ color: "white", textAlign: "center" }}>10</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.choiceBox}
+                            onPress={() => setLimit(50) && characteres() && console.log(limit)}
+                        >
+                            <Text style={{ color: "white", textAlign: "center" }}>50</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.choiceBox}
+                            onPress={() => setLimit(100) && characteres() && console.log(limit)}
+                        >
+                            <Text style={{ color: "white", textAlign: "center" }}>100</Text>
+                        </TouchableOpacity>
+                    </View>
 
                     <FlatList
                         data={characters}
                         numColumns={2}
-                        keyExtractor={(item) => item.id.toString()}
+                        keyExtractor={(item) => item.id}
                         renderItem={({ item }) => (
                             <TouchableOpacity style={styles.characterContainer}
                                 onPress={() => navigation.navigate('Card', { ...item })}
@@ -63,8 +88,27 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#2a2a2a',
+        backgroundColor: '#000',
         // padding: 10,
+    },
+    choiceText: {
+        color: '#fff',
+        fontSize: 20,
+        margin: 5,
+        textAlign: 'center',
+    },
+    choiceButton: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: 5,
+    },
+    choiceBox: {
+        backgroundColor: "#fa3737",
+        padding: 10,
+        margin: 10,
+        width: 80,
+        borderRadius: 15,
     },
     characterContainer: {
         borderWidth: 1,
