@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     // marginBottom: 15,
   },
   description: {
-    fontSize: 12,
+    fontSize: 16,
     marginTop: 10,
     fontWeight: '500',
   },
