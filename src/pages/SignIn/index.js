@@ -18,7 +18,7 @@ export default function Login() {
           <View style={styles.form}>
             <Text
               style={styles.text}
-            >Nome Completo</Text>
+            >Nome do usuário</Text>
             <TextInput
               style={styles.textInput}
               placeholder="Nome"

@@ -37,11 +37,13 @@ export default function Welcome({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity
+        style={{flexDirection: "row"}}
         onPress={() => navigation.navigate("Login")}
         >
           <Text style={styles.registerText}>
-            Não possui uma conta? Cadastre-se
+            Não possui uma conta? 
           </Text>
+          <Text style={{color:"red"}}> Cadastre-se</Text>
         </TouchableOpacity>
 
         <View style={styles.icons}>
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   registerText: {
-    color: "#606060",
+    color: "#black",
     fontSize: 15
   },
   icons: {
