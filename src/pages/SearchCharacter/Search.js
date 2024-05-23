@@ -13,14 +13,14 @@ export default function Search({ navigation }) {
         const resultado = await getCharacterByName(name)
         console.log(resultado)
 
-        setName("") // Limpa nome de usuário após busca
+        setName("") // Limpa nome de personagem após busca
 
         if (resultado) {
-            setName(resultado) // Caso encontre o usuário vai ser setado e puxar suas informações
+            setName(resultado) // Caso encontre o personagem vai ser setado e puxar suas informações
             setCharacter(resultado);
         } else {
-            Alert.alert("Usuário não encontrado") // Caso não encontre vai retornar um alerta
-            setName("") // Se já estivesse logado de um usuário vai zerar
+            Alert.alert("Personagem não encontrado") // Caso não encontre vai retornar um alerta
+            setName("") // Se já estiver em uso vai limpar o campo de busca
         }
     }
 
