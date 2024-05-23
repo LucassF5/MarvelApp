@@ -8,7 +8,6 @@ export default function InitialRoute({ navigation }) {
     const [isLoading, setIsLoading] = useState(true);
     const [characters, setCharacters] = useState([]);
     const [limit, setLimit] = useState(10);
-    // console.log(limit)
 
     async function characteres() {
         const resultado = await getCharacters(limit)
@@ -16,7 +15,6 @@ export default function InitialRoute({ navigation }) {
         if (resultado) {
             setCharacters(resultado);
             setIsLoading(false);
-            // console.log(resultado)
         } else {
             Alert.alert("Não foi possível carregar os personagens.")
         }
@@ -35,14 +33,11 @@ export default function InitialRoute({ navigation }) {
                 <ActivityIndicator size="large" color="#0000ff" /> // animação de carregamento
             ) : (
                 <View style={{ flex: 1 }}>
-                    {/* <TouchableOpacity style={{ marginVertical: 30 }} onPress={() => navigation.goBack()}>
-                        <Text
-                            style={{ backgroundColor: "red", textAlign: "center", padding: 10, fontSize: 16 }}
-                        >Voltar</Text>
-                    </TouchableOpacity> */}
 
                     <Text style={styles.choiceText}>Quantos personagens deseja visualizar?</Text>
-                    <Text style={{ fontSize: 14, color: "#faa", textAlign: "center"}}>Limite de 100 nesse modo</Text>
+                    <Text style={{ fontSize: 14, color: "#faa", textAlign: "center" }}>
+                        Limite de 100 nesse modo
+                    </Text>
                     <View style={styles.choiceButton}>
                         <TouchableOpacity
                             style={styles.choiceBox}
@@ -73,7 +68,10 @@ export default function InitialRoute({ navigation }) {
                                 onPress={() => navigation.navigate('Card', { ...item })}
                             >
                                 <Text style={styles.name}>{item.name}</Text>
-                                <Image source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} style={{ width: "70%", aspectRatio: 1 }} />
+                                <Image
+                                    source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }}
+                                    style={{ width: "70%", aspectRatio: 1 }}
+                                />
                             </TouchableOpacity>
                         )}
                     />
@@ -89,7 +87,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#000',
-        // padding: 10,
     },
     choiceText: {
         color: '#fff',
@@ -113,12 +110,10 @@ const styles = StyleSheet.create({
     characterContainer: {
         borderWidth: 1,
         borderColor: '#ccc',
-        // margin: 10,
         alignItems: 'center',
         aspectRatio: 1,
         width: '41.5%',
         borderRadius: 10,
-        // margin: 3,
         backgroundColor: '#f5fcff',
         margin: 10,
         marginLeft: 20,

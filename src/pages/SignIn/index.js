@@ -10,7 +10,6 @@ export default function Login() {
     <ImageBackground source={require("../../assets/M.jpg")} resizeMode='cover' style={styles.image}>
       <LinearGradient
         colors={['rgba(0,0,0,0.8)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,0.8)']}
-      // style={styles.container}
       >
         <View style={styles.container}>
           <Text style={styles.cadastro}>Cadastro de Usuário</Text>
@@ -23,13 +22,6 @@ export default function Login() {
               style={styles.textInput}
               placeholder="Nome"
             />
-            {/* <Text
-              style={styles.text}
-            >Email</Text>
-            <TextInput
-              style={styles.textInput}
-              placeholder="Nome"
-            /> */}
             <Text
               style={styles.text}
             >Senha</Text>
@@ -58,11 +50,7 @@ export default function Login() {
 
 styles = StyleSheet.create({
   container: {
-  // flex: 1,
-  // justifyContent: 'center',
-  // alignItems: 'center',
-  // backgroundColor: 'rgba(0,0,0,0.8)',
-  height: "100%"
+    height: "100%"
   },
   image: {
     flex: 1,
@@ -95,7 +83,6 @@ styles = StyleSheet.create({
     width: "100%",
     height: 40,
     borderRadius: 5,
-    // color: 'white',
     marginBottom: "5%",
     paddingLeft: "3%",
     height: 55,
@@ -116,8 +103,3 @@ styles = StyleSheet.create({
     fontSize: 23
   }
 })
-
-{/* <Text>Email</Text>
-<Text>Senha</Text>
-<Text>Telefone</Text>
-<Text>Confirmar senha</Text> */}

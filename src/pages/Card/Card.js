@@ -11,18 +11,16 @@ const Card = ({ route, navigation }) => {
   const [comics, setComics] = useState(route.params.comics.items)
   console.log(route.params)
 
-
-  // useEffect(() => {
-  //   setCharacter(route.params.name)
-  //   setDescription(route.params.description)
-  //   setImage(`${route.params.thumbnail.path}.${route.params.thumbnail.extension}`)
-  // }, [route.params])
-
   return (
-    <ImageBackground source={require("../../assets/Marvel.jpg")} resizeMode='cover' style={styles.container}>
+    <ImageBackground
+      source={require("../../assets/Marvel.jpg")}
+      resizeMode='cover' style={styles.container}
+    >
       <View >
-        <LinearGradient style={{ padding: 20, borderRadius: 10, width: '90%', flex: 1, justifyContent: 'center', alignItems: 'center'}}
-          colors={['rgba(255,255,255,0.9)', 'rgba(255,255,255,0.9)', 'rgba(255,255,255,0.9)']}>
+        <LinearGradient
+          style={{ padding: 20, borderRadius: 10, width: '90%', flex: 1, justifyContent: 'center', alignItems: 'center' }}
+          colors={['rgba(255,255,255,0.9)', 'rgba(255,255,255,0.9)', 'rgba(255,255,255,0.9)']}
+        >
           <Text style={styles.name}>{character}</Text>
           <Image source={{ uri: image }} style={{ width: "100%", aspectRatio: 1 }} />
           <View>

@@ -17,17 +17,13 @@ function TabRoutes() {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                // tabBarShowLabel: false,
                 tabBarStyle: {
                     backgroundColor: "#000",
                     borderTopColor: "#000",
-                    // borderTopStartRadius: 20,
-                    // borderTopEndRadius: 20,
                     height: 60
                 },
                 tabBarActiveTintColor: "#fff",
                 tabBarInactiveTintColor: "#999",
-                // tabBarInactiveBackgroundColor: "#a1a1a1", // Cor de fundo da aba inativa/opcional
                 tabBarLabelStyle: {
                     fontSize: 12,
                     fontWeight: "bold"

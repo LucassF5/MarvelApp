@@ -28,7 +28,6 @@ export default function Perfil({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: "black"
   },
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
   imgBG: {
     width: "100%",
     height: "100%",
-    // justifyContent: "center",
     alignItems: "center"
   },
   imgText: {

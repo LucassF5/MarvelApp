@@ -47,7 +47,9 @@ export default function Search({ navigation }) {
                         BUSCAR
                     </Text>
                 </TouchableOpacity>
-                <Text style={{ color: "white", fontSize: 12, fontWeight: "bold", marginBottom: 5 }}>*Obs: os nomes precisam ser em inglês</Text>
+                <Text style={{ color: "white", fontSize: 12, fontWeight: "bold", marginBottom: 5 }}>
+                    *Obs: os nomes precisam ser em inglês
+                </Text>
 
                 <FlatList
                     data={character}
@@ -58,7 +60,10 @@ export default function Search({ navigation }) {
                             onPress={() => navigation.navigate('Card', { ...item })}
                         >
                             <Text style={styles.name}>{item.name}</Text>
-                            <Image source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} style={{ width: "70%", aspectRatio: 1 }} />
+                            <Image
+                                source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }}
+                                style={{ width: "70%", aspectRatio: 1 }}
+                            />
                         </TouchableOpacity>
                     )}
                 />
@@ -106,12 +111,10 @@ const styles = StyleSheet.create({
     characterContainer: {
         borderWidth: 1,
         borderColor: '#ccc',
-        // margin: 10,
         alignItems: 'center',
         aspectRatio: 1,
         width: '41.5%',
         borderRadius: 10,
-        // margin: 3,
         backgroundColor: '#f5fcff',
         margin: 10,
         marginLeft: 20,
