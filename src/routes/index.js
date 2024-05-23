@@ -7,6 +7,7 @@ import Welcome from "../pages/Welcome"
 import InitialRoute from "../pages/InitialRoute"
 import Card from "../pages/Card/Card"
 import Search from "../pages/SearchCharacter/Search"
+import Perfil from "../pages/Perfil/Perfil"
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -50,6 +51,17 @@ function TabRoutes() {
                 options={{
                     tabBarIcon: () => (
                         <Image source={require('../assets/SRC.png')}
+                            style={{ width: 35, height: 35 }} />
+                    )
+                }}
+            />
+
+            <Tab.Screen
+                name="Perfil"
+                component={Perfil}
+                options={{
+                    tabBarIcon: () => (
+                        <Image source={require('../assets/B-panther.png')}
                             style={{ width: 35, height: 35 }} />
                     )
                 }}
